@@ -1,0 +1,36 @@
+{
+  "name": "agentic-ai-langchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajithkumarreddy/agentic-ai-langchain.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajithkumarreddy/agentic-ai-langchain/issues"
+  },
+  "homepage": "https://github.com/ajithkumarreddy/agentic-ai-langchain#readme",
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.2.9",
+    "@langchain/langgraph": "^1.4.14",
+    "@langchain/openai": "^1.5.11",
+    "dotenv": "^17.4.2",
+    "langchain": "^1.5.10",
+    "zod": "^4.5.4"
+  }
+}
