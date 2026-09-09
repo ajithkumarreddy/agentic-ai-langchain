@@ -2,6 +2,7 @@ import "dotenv/config";
 
 import { createAgent } from "langchain";
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
+import { StructuredTool } from "@langchain/core/tools";
 
 const model = new ChatGoogleGenerativeAI({
   model: "gemini-3.5-flash-lite",
@@ -9,7 +10,7 @@ const model = new ChatGoogleGenerativeAI({
   maxRetries: 2,
 });
 
-export const createLLMAgent = (tools: any[] = []) => {
+const createLLMAgent = (tools: StructuredTool[] = []) => {
   return createAgent({
     model,
     tools,
