@@ -3,8 +3,8 @@
  */
 
 import { AIMessage, HumanMessage, ToolMessage } from "langchain";
-import { model } from "../index.js";
-import getWeather from "../tools/weather.tool.js";
+import { model } from "../../index.js";
+import getWeather from "../../tools/weather.tool.js";
 
 const modelWithTools = model.bindTools([getWeather]);
 const messages: [AIMessage | HumanMessage | ToolMessage] = [
@@ -15,6 +15,7 @@ const messages: [AIMessage | HumanMessage | ToolMessage] = [
 const aiResponse = await modelWithTools.invoke(messages);
 messages.push(aiResponse);
 
+// Tool execution loop
 if (AIMessage.isInstance(aiResponse) && aiResponse.tool_calls?.length) {
   const toolCall = aiResponse.tool_calls[0];
 

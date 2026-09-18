@@ -1,6 +1,6 @@
 import { isAIMessage } from "@langchain/core/messages";
-import createLLMAgent from "../index.js";
-import getWeather from "../tools/weather.tool.js";
+import createLLMAgent from "../../index.js";
+import getWeather from "../../tools/weather.tool.js";
 
 const agent = createLLMAgent([getWeather]);
 
