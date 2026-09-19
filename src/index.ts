@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-import { createAgent } from "langchain";
+import { createAgent, ResponseFormat } from "langchain";
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { StructuredTool } from "@langchain/core/tools";
 
@@ -10,10 +10,14 @@ export const model = new ChatGoogleGenerativeAI({
   maxRetries: 2,
 });
 
-const createLLMAgent = (tools: StructuredTool[] = []) => {
+const createLLMAgent = (
+  tools: StructuredTool[] = [],
+  responseFormat?: ResponseFormat | any,
+) => {
   return createAgent({
     model,
     tools,
+    responseFormat,
   });
 };
 
