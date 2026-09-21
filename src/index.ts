@@ -11,7 +11,7 @@ export const model = new ChatGoogleGenerativeAI({
 });
 
 type AgentOptions = Omit<
-  Parameters<typeof createAgent>[0],
+  CreateAgentParams,
   "model" | "tools" | "responseFormat"
 >;
 
