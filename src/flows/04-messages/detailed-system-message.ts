@@ -1,5 +1,5 @@
 import { HumanMessage, SystemMessage } from "langchain";
-import createLLMAgent from "../../index.ts";
+import createLLMAgent from "../../index.js";
 
 const agent = createLLMAgent([]);
 
