@@ -20,7 +20,7 @@ const guardrailModel = new ChatGoogleGenerativeAI({
 const llmGuardrailMiddleware = createMiddleware({
   name: "llm-guardrail",
 
-  wrapModelCall: async (request, handler) => {
+  beforeAgent: async (request) => {
     const lastMessage = request.messages[request.messages.length - 1];
 
     const result = await guardrailModel.invoke([
@@ -58,8 +58,6 @@ const llmGuardrailMiddleware = createMiddleware({
     }
 
     console.log("✅ Request allowed");
-
-    return handler(request);
   },
 });
 

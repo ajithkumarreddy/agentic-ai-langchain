@@ -20,4 +20,4 @@ const response = await agent.invoke({
 
 // response
 const lastMessage = response.messages[response.messages.length - 1];
-console.log(lastMessage);
+console.log(lastMessage.content);
